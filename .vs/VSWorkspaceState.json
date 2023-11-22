@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WorkScheduleSystem"
+    "\\Domain",
+    "\\Domain\\Entities",
+    "\\Domain\\obj",
+    "\\Infrastructure",
+    "\\Task_Managment_System"
   ],
-  "SelectedNode": "\\WorkScheduleSystem",
+  "SelectedNode": "\\Task_Managment_System\\Task_Managment_System.Server.csproj",
   "PreviewInSolutionExplorer": false
 }

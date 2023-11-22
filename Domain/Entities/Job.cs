@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    internal class Job
+    public class Job: BaseEntity
     {
+        public string JobName { get; set; }
     }
 }
