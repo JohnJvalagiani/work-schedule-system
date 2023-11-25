@@ -17,12 +17,20 @@ public class SchedulesController : ControllerBase
     {
         _scheduleRepo = scheduleRepo;
     }
+    
+    [HttpGet("current-week")]
+    [Authorize(Roles = "worker,admin")]
+    public async Task<ActionResult<IEnumerable<Schedule>>> GetCurrentWeekSchedules()
+    {
+        var currentWeekSchedules = await _scheduleRepo.GetCurrentWeekSchedulesAsync();
+        return Ok(currentWeekSchedules);
+    }
 
     [HttpGet]
     [Authorize(Roles = "worker,admin")]
-    public async Task<ActionResult<IEnumerable<Schedule>>> GetSchedules()
+    public async Task<ActionResult<IEnumerable<Schedule>>> GetAllSchedules()
     {
-        var schedules = await _scheduleRepo.GetSchedulesAsync();
+        var schedules = await _scheduleRepo.GetAllSchedulesAsync();
         return Ok(schedules);
     }
 
