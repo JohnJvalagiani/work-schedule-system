@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Dtos
 {
-    public class Schedule: BaseEntity
+    public class ScheduleDto
     {
         public string Employee { get; set; }
         public DateTime StartTime { get; set; }

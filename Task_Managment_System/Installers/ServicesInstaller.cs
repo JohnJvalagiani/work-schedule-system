@@ -12,6 +12,7 @@ using Task_Managment_System.Abstraction;
 using Task_Managment_System.Implementation;
 using Application.Services.Abstraction;
 using Server.Services.Abstraction;
+using Application.Services;
 
 namespace Task_Managment_System.Server.Installers
 {
@@ -32,8 +33,6 @@ namespace Task_Managment_System.Server.Installers
             services.AddScoped<ISchedulerRepo, SchedulerRepo>();
 
             services.AddScoped <IRoleManagerService,RoleManagerService> ();
-
-
         }
     }
 }

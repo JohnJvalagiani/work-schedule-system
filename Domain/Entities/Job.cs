@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Job: BaseEntity
+    public enum Job
     {
-        public string JobName { get; set; }
+        Barista,
+        Security,
+        Waiter
     }
 }

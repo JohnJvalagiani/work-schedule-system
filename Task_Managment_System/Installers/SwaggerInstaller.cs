@@ -16,7 +16,7 @@ namespace Task_Managment_System.Server.Installers
         {
             services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "Task Managment System", });
+                opt.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "Work schedule system", });
 
                 var s = new OpenApiSecurityRequirement { };
 

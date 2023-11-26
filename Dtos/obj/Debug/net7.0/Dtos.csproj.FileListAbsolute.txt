@@ -22,3 +22,6 @@ C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\obj\Debug\net7.0\Dtos.dll
 C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\obj\Debug\net7.0\refint\Dtos.dll
 C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\obj\Debug\net7.0\Dtos.pdb
 C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\obj\Debug\net7.0\ref\Dtos.dll
+C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\bin\Debug\net7.0\Domain.dll
+C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\bin\Debug\net7.0\Domain.pdb
+C:\Users\John\Desktop\tASKS\work-schedule-system\Dtos\obj\Debug\net7.0\Dtos.csproj.CopyComplete

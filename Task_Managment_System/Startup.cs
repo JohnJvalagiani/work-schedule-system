@@ -57,6 +57,7 @@ namespace Task_Managment_System
             }
 
             CreateAdminAccount(serviceProvider).Wait();
+            CreateWorkerAccount(serviceProvider).Wait();
 
             app.ConfigurationCustomExceptionMiddleware();
 
@@ -100,6 +101,35 @@ namespace Task_Managment_System
             if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
             {
                 await userManager.AddToRoleAsync(adminUser, "Admin");
+            }
+
+            var claimResult = await userManager.AddClaimAsync(adminUser, new Claim("Permission", "All"));
+            if (!claimResult.Succeeded)
+            {
+                throw new Exception("Failed to add claim to admin user");
+            }
+        }
+        private async Task CreateWorkerAccount(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<AppUser>>();
+
+            if (!await roleManager.RoleExistsAsync("worker"))
+            {
+                await roleManager.CreateAsync(new IdentityRole("worker"));
+            }
+
+            var adminUser = await userManager.FindByNameAsync("worker@example.com");
+
+            if (adminUser == null)
+            {
+                adminUser = new AppUser { UserName = "worker@example.com", Email = "worker@example.com" };
+                await userManager.CreateAsync(adminUser, "worker@123");
+            }
+
+            if (!await userManager.IsInRoleAsync(adminUser, "worker"))
+            {
+                await userManager.AddToRoleAsync(adminUser, "worker");
             }
 
             var claimResult = await userManager.AddClaimAsync(adminUser, new Claim("Permission", "All"));

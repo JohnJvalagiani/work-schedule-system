@@ -12,7 +12,6 @@ namespace Infrastructure.Data
 {
     public class ApplicationDbContext:IdentityDbContext<AppUser>
     {
-        public DbSet<Job> Jobs { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {

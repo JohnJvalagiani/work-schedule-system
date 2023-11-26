@@ -23,19 +23,20 @@ public class SchedulerRepo : ISchedulerRepo
    
     public async Task<Schedule> GetScheduleByIdAsync(int id)
     {
-        return await _context.Schedules.FindAsync(id);
+        return await _context.Schedules 
+        .FirstOrDefaultAsync(schedule => schedule.Id == id);
     }
 
     public async Task<int> AddScheduleAsync(Schedule schedule)
     {
         _context.Schedules.Add(schedule);
         await _context.SaveChangesAsync();
-        return schedule.ScheduleId;
+        return schedule.Id;
     }
 
     public async Task UpdateScheduleAsync(int id, Schedule schedule)
     {
-        if (id != schedule.ScheduleId)
+        if (id != schedule.Id)
         {
             throw new ArgumentException("Invalid schedule ID");
         }

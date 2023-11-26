@@ -179,7 +179,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\John\\Desktop\\tASKS\\work-schedule-system\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\John\\Desktop\\tASKS\\work-schedule-system\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
